@@ -4,7 +4,7 @@ setlocal noautoindent
 setlocal nocindent
 setlocal nosmartindent
 setlocal indentexpr=
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 "https://stackoverflow.com/questions/9721732/mapping-shift-arrows-to-selecting-characters-lines
 nmap <S-Up> v<Up>
 nmap <S-Down> v<Down>
@@ -36,7 +36,7 @@ vnoremap <A-Up> :m '<-2<CR>gv=gv
 
 
 vmap <BS> <Del>
-"set mouse=a
+set mouse=a
 highlight Visual ctermbg=DarkBlue ctermfg=LightYellow
 
 noremap <silent> <C-S>          :update<CR>
@@ -85,3 +85,20 @@ set splitright
 "https://vim.fandom.com/wiki/Highlight_unwanted_spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+
+"https://github.com/itchyny/lightline.vim#introduction
+set laststatus=2
+set noshowmode
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:airline#extensions#tabline#enabled = 1
+let g:gitgutter_enabled = 1
+set updatetime=200
+
+let g:airline_powerline_fonts = 1
+"let g:gitgutter_set_sign_backgrounds = 1
+
+highlight GitGutterDelete ctermbg=darkred ctermfg=black
+highlight GitGutterAdd ctermbg=green ctermfg=black
+highlight GitGutterChange ctermbg=darkyellow ctermfg=black
