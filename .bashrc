@@ -178,7 +178,8 @@ PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\
 alias update='sudo dnf upgrade'
 alias hibernate='sudo systemctl hibernate'
 alias micro='$GOPATH/bin/micro'
-alias vi='vim'
+alias vi='vimx'
+alias vim='vimx'
 alias open='xdg-open 2> /dev/null'
 alias check='/home/michael/bin/checkpatch.pl --no-tree --max-line-length=1000 --ignore SPDX_LICENSE_TAG --ignore=CONST_STRUCT --file'
 
